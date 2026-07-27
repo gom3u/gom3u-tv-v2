@@ -1,1 +1,62 @@
-<!doctype html><title>GoM3U TV v2</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoM3U TV v2 - Premium Live TV</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="brand tv-focusable">
+      <div class="brand-logo">G</div>
+      <div class="brand-name">GoM3U TV <span style="color:var(--accent-purple); font-size: 0.9rem;">v2</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn active tv-focusable">📺 Live TV</a>
+      <a href="admin.html" class="nav-btn tv-focusable">⚙️ Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- Marquee Notice -->
+  <div class="notice-banner" id="noticeBanner" style="display: none;">
+    <div class="notice-content" id="noticeContent"></div>
+  </div>
+
+  <!-- Hero Live Section -->
+  <section class="hero-banner" id="heroBanner">
+    <div class="hero-info">
+      <span class="badge-live">● Live Stream</span>
+      <h1 class="hero-title" id="heroTitle">Featured Channel</h1>
+      <p class="hero-desc" id="heroCategory">Category</p>
+      <button class="nav-btn active tv-focusable" id="heroPlayBtn" style="padding: 14px 28px; font-size: 1.1rem;">
+        ▶ Watch Live Now
+      </button>
+    </div>
+  </section>
+
+  <!-- Filter & Controls -->
+  <div class="controls-bar">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input tv-focusable" placeholder="Search channels or categories...">
+    </div>
+    <div class="categories-scroll" id="categoriesScroll">
+      <!-- Dynamic Categories -->
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <main class="grid-container">
+    <h2 class="section-title">📡 Available Live Channels</h2>
+    <div class="channels-grid" id="channelsGrid">
+      <!-- Dynamic Channels -->
+    </div>
+  </main>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
