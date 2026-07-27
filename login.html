@@ -1,1 +1,42 @@
-<!doctype html><title>Login</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoM3U TV v2 - Admin Login</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-card">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div class="brand-logo" style="margin: 0 auto 12px auto; width: 50px; height: 50px; font-size: 1.6rem;">G</div>
+        <h2>Admin Authentication</h2>
+        <p style="color: var(--text-muted); font-size:0.9rem; margin-top:4px;">Default PIN is <strong>1234</strong></p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label">Enter Security PIN</label>
+          <input type="password" id="pinInput" class="form-control tv-focusable" placeholder="••••" maxlength="4" required>
+        </div>
+        <button type="submit" class="btn-primary tv-focusable" style="width: 100%;">Unlock Admin Dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const pin = document.getElementById('pinInput').value;
+      if (pin === '1234') {
+        sessionStorage.setItem('gom3u_admin_auth', 'true');
+        window.location.href = 'admin.html';
+      } else {
+        alert('Invalid PIN!');
+      }
+    });
+  </script>
+</body>
+</html>
