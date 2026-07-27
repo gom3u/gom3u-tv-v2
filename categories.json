@@ -1,1 +1,9 @@
-[]
+[
+  {"id": "cat-all", "name": "All Channels", "icon": "📺"},
+  {"id": "cat-fav", "name": "Favorites", "icon": "⭐"},
+  {"id": "cat-news", "name": "News", "icon": "🌐"},
+  {"id": "cat-sports", "name": "Sports", "icon": "⚽"},
+  {"id": "cat-movies", "name": "Movies", "icon": "🎬"},
+  {"id": "cat-doc", "name": "Documentary", "icon": "🌿"},
+  {"id": "cat-kids", "name": "Kids", "icon": "🎈"}
+]
