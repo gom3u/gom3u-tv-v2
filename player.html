@@ -1,1 +1,58 @@
-<!doctype html><title>Player</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoM3U TV v2 - Player</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- HLS.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body style="background: #000; padding-bottom:0;">
+
+  <div class="player-page">
+    <div class="video-container">
+      <video id="videoPlayer" autoplay playsinline></video>
+
+      <!-- Video Controls Overlay -->
+      <div class="video-overlay" id="videoOverlay">
+        <div class="player-header">
+          <button class="icon-btn tv-focusable" onclick="window.location.href='index.html'">←</button>
+          <div class="player-title-box">
+            <img id="playerChannelLogo" class="player-channel-logo" src="" alt="">
+            <div>
+              <h3 id="playerChannelTitle" style="font-weight: 700;">Channel Name</h3>
+              <p id="playerChannelCategory" style="font-size: 0.85rem; color: var(--text-muted);">Category</p>
+            </div>
+          </div>
+          <button class="icon-btn tv-focusable" id="toggleSidebarBtn">☰</button>
+        </div>
+
+        <div class="player-footer">
+          <div class="player-controls-row">
+            <div class="controls-group">
+              <button class="icon-btn tv-focusable" id="playPauseBtn">⏸</button>
+              <span style="color: var(--accent-red); font-weight:800; font-size:0.85rem;">● LIVE</span>
+            </div>
+            <div class="controls-group">
+              <button class="icon-btn tv-focusable" id="fullscreenBtn">⛶</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Switcher Sidebar -->
+    <aside class="player-sidebar" id="playerSidebar">
+      <div class="sidebar-header">
+        <span>Channels Guide</span>
+      </div>
+      <div class="sidebar-list" id="sidebarList">
+        <!-- Dynamic Sidebar Items -->
+      </div>
+    </aside>
+  </div>
+
+  <script src="assets/js/player.js"></script>
+</body>
+</html>
