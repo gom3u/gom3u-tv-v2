@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "id": "ch-1",
+    "name": "Global News 24/7",
+    "logo": "https://picsum.photos/id/1015/300/300",
+    "category": "News",
+    "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "isFeatured": true,
+    "group": "World News"
+  },
+  {
+    "id": "ch-2",
+    "name": "Euro Sports HD",
+    "logo": "https://picsum.photos/id/1058/300/300",
+    "category": "Sports",
+    "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "isFeatured": true,
+    "group": "Live Sports"
+  },
+  {
+    "id": "ch-3",
+    "name": "CineMax Hollywood",
+    "logo": "https://picsum.photos/id/1025/300/300",
+    "category": "Movies",
+    "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "isFeatured": false,
+    "group": "Cinema"
+  },
+  {
+    "id": "ch-4",
+    "name": "Wild Earth Wildlife",
+    "logo": "https://picsum.photos/id/1024/300/300",
+    "category": "Documentary",
+    "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "isFeatured": true,
+    "group": "Nature"
+  },
+  {
+    "id": "ch-5",
+    "name": "Kids Planet Toons",
+    "logo": "https://picsum.photos/id/1062/300/300",
+    "category": "Kids",
+    "url": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "isFeatured": false,
+    "group": "Entertainment"
+  }
+]
