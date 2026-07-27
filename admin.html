@@ -1,1 +1,101 @@
-<!doctype html><title>Admin</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoM3U TV v2 - Admin Management</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand tv-focusable">
+      <div class="brand-logo">G</div>
+      <div class="brand-name">GoM3U TV Admin</div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-btn tv-focusable">📺 Live TV</a>
+      <button onclick="logout()" class="nav-btn tv-focusable" style="background:var(--accent-red);">Logout</button>
+    </div>
+  </nav>
+
+  <div class="admin-container">
+    <!-- Notice Marquee Config -->
+    <div class="admin-card" style="margin-bottom: 24px;">
+      <h3>📢 Global Notice Marquee</h3>
+      <form onsubmit="saveNoticeSetting(event)" style="margin-top: 16px;">
+        <div class="form-group">
+          <label class="form-label">Notice Text Message</label>
+          <input type="text" id="noticeMsg" class="form-control tv-focusable" required>
+        </div>
+        <div class="form-group" style="display:flex; align-items:center; gap:10px;">
+          <input type="checkbox" id="noticeActive" style="width:20px; height:20px;">
+          <label for="noticeActive">Enable Notice Banner</label>
+        </div>
+        <button type="submit" class="btn-primary tv-focusable">Save Notice</button>
+      </form>
+    </div>
+
+    <!-- M3U Playlist Parser -->
+    <div class="admin-card" style="margin-bottom: 24px;">
+      <h3>📁 Import M3U / M3U8 Playlist</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; margin-bottom:16px;">
+        Upload your `.m3u` file to parse and save IPTV streams locally.
+      </p>
+      <div style="display:flex; gap:12px; align-items:center;">
+        <input type="file" id="m3uFileInput" accept=".m3u,.m3u8" class="form-control tv-focusable">
+        <button type="button" onclick="parseM3UFile()" class="btn-primary tv-focusable">Upload & Import</button>
+      </div>
+    </div>
+
+    <!-- Add Single Channel -->
+    <div class="admin-card" style="margin-bottom: 24px;">
+      <h3>➕ Add Custom Channel</h3>
+      <form onsubmit="addSingleChannel(event)" style="margin-top:16px;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label class="form-label">Channel Name</label>
+            <input type="text" id="chName" class="form-control tv-focusable" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <input type="text" id="chCategory" class="form-control tv-focusable" placeholder="Sports, News, etc." required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Stream M3U8 / Direct URL</label>
+          <input type="url" id="chUrl" class="form-control tv-focusable" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Logo Image URL</label>
+          <input type="url" id="chLogo" class="form-control tv-focusable" placeholder="https://...">
+        </div>
+        <button type="submit" class="btn-primary tv-focusable">Add Channel</button>
+      </form>
+    </div>
+
+    <!-- Custom Loaded Channels Table -->
+    <div class="admin-card">
+      <h3>📺 Custom Channel Database</h3>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Logo</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>URL</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="adminChannelsTable">
+            <!-- Dynamic Channels -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
